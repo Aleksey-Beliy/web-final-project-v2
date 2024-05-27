@@ -1,0 +1,139 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+     overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align:center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+  margin-top: 60px; /* Учитываем высоту навигации */
+    padding: 20px;
+    overflow: auto; /* Добавляем скролл, если контент будет выходить за пределы */
+    box-sizing: border-box; /* Учитываем padding в общей ширине элемента */
+    height: calc(100vh - 60px);
+    flex:1;
+    
+}
+
+.news-block {
+	margin:20px auto;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: relative; /* Добавляем позиционирование для псевдоэлемента */
+    transition: transform 0.3s ease; /* Анимация */
+    width: 15cm;
+    height: 10cm;
+}
+
+.news-block:hover {
+    transform: translateY(-5px); /* Анимация при наведении */
+}
+
+.news-block .category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.news-block h2 {
+    margin-top: 0;
+}
+
+.news-block img {
+    max-width: 100%;
+}
+
+/* Добавляем декоративные стили */
+.news-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Анимация */
+}
+
+.news-block:hover::before {
+    opacity: 1; /* Показываем при наведении */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-content div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-content div:last-child {
+    margin-right: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+.button {
+	background-color: green; 
+	border: none;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	}
+	
